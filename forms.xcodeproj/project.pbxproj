@@ -14,6 +14,8 @@
 		5094D8BA21B17C65004A7F80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5094D8B821B17C65004A7F80 /* LaunchScreen.storyboard */; };
 		5094D8C521B17C65004A7F80 /* formsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8C421B17C65004A7F80 /* formsTests.swift */; };
 		5094D8D021B17C65004A7F80 /* formsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8CF21B17C65004A7F80 /* formsUITests.swift */; };
+		5094D8E321B18B36004A7F80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8E221B18B36004A7F80 /* ProfileViewController.swift */; };
+		ACAA9F4184D4B75100D4BD8D /* Pods_forms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C701B4102735C773F625C897 /* Pods_forms.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1ECF0DEF644BC54C224010CA /* Pods-forms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forms.release.xcconfig"; path = "Target Support Files/Pods-forms/Pods-forms.release.xcconfig"; sourceTree = "<group>"; };
+		47CA9D9A512F93E10A89C60A /* Pods-forms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forms.debug.xcconfig"; path = "Target Support Files/Pods-forms/Pods-forms.debug.xcconfig"; sourceTree = "<group>"; };
 		5094D8AC21B17C64004A7F80 /* forms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = forms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094D8AF21B17C64004A7F80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5094D8B121B17C64004A7F80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		5094D8CB21B17C65004A7F80 /* formsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = formsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094D8CF21B17C65004A7F80 /* formsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formsUITests.swift; sourceTree = "<group>"; };
 		5094D8D121B17C65004A7F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5094D8E221B18B36004A7F80 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C701B4102735C773F625C897 /* Pods_forms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_forms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACAA9F4184D4B75100D4BD8D /* Pods_forms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23E7521F94EFA8F30C9E0B89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C701B4102735C773F625C897 /* Pods_forms.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F375E6BFF248B497B5FB730 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47CA9D9A512F93E10A89C60A /* Pods-forms.debug.xcconfig */,
+				1ECF0DEF644BC54C224010CA /* Pods-forms.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5094D8A321B17C63004A7F80 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				5094D8C321B17C65004A7F80 /* formsTests */,
 				5094D8CE21B17C65004A7F80 /* formsUITests */,
 				5094D8AD21B17C64004A7F80 /* Products */,
+				3F375E6BFF248B497B5FB730 /* Pods */,
+				23E7521F94EFA8F30C9E0B89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +130,7 @@
 				5094D8B621B17C65004A7F80 /* Assets.xcassets */,
 				5094D8B821B17C65004A7F80 /* LaunchScreen.storyboard */,
 				5094D8BB21B17C65004A7F80 /* Info.plist */,
+				5094D8E221B18B36004A7F80 /* ProfileViewController.swift */,
 			);
 			path = forms;
 			sourceTree = "<group>";
@@ -132,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5094D8D421B17C65004A7F80 /* Build configuration list for PBXNativeTarget "forms" */;
 			buildPhases = (
+				68402A07BE7A1A7872CEDB9D /* [CP] Check Pods Manifest.lock */,
 				5094D8A821B17C63004A7F80 /* Sources */,
 				5094D8A921B17C63004A7F80 /* Frameworks */,
 				5094D8AA21B17C63004A7F80 /* Resources */,
+				2CBAC4619B2044675FB2583A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +223,7 @@
 				TargetAttributes = {
 					5094D8AB21B17C63004A7F80 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					5094D8BF21B17C65004A7F80 = {
 						CreatedOnToolsVersion = 10.1;
@@ -251,6 +282,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CBAC4619B2044675FB2583A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forms/Pods-forms-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-forms/Pods-forms-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68402A07BE7A1A7872CEDB9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-forms-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5094D8A821B17C63004A7F80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +336,7 @@
 			files = (
 				5094D8B221B17C64004A7F80 /* ViewController.swift in Sources */,
 				5094D8B021B17C64004A7F80 /* AppDelegate.swift in Sources */,
+				5094D8E321B18B36004A7F80 /* ProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,8 +509,10 @@
 		};
 		5094D8D521B17C65004A7F80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47CA9D9A512F93E10A89C60A /* Pods-forms.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ72TG9L7C;
 				INFOPLIST_FILE = forms/Info.plist;
@@ -441,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.forms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,8 +530,10 @@
 		};
 		5094D8D621B17C65004A7F80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ECF0DEF644BC54C224010CA /* Pods-forms.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ72TG9L7C;
 				INFOPLIST_FILE = forms/Info.plist;
