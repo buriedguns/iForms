@@ -25,16 +25,11 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //hiding back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton
-        
         //getting user data from defaults
         let defaultValues = UserDefaults.standard
         if let name = defaultValues.string(forKey: "username"){
             //setting the name to label
-            userName.text = name
+            self.userName.text = name
         }else{
             //send back to login view controller
         }
