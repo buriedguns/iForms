@@ -12,7 +12,6 @@
 		5003207F21B6B12400CCD441 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003207E21B6B12400CCD441 /* EditUserViewController.swift */; };
 		5003208121B6C4C900CCD441 /* CustomSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5003208021B6C4C900CCD441 /* CustomSelectorTableViewController.swift */; };
 		501294D721B58CFE0089A24F /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501294D621B58CFE0089A24F /* SideMenuTableViewController.swift */; };
-		501294D921B58E4B0089A24F /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501294D821B58E4B0089A24F /* UsersViewController.swift */; };
 		501294DB21B58FE40089A24F /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501294DA21B58FE40089A24F /* GroupsViewController.swift */; };
 		5094D8B021B17C64004A7F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8AF21B17C64004A7F80 /* AppDelegate.swift */; };
 		5094D8B221B17C64004A7F80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8B121B17C64004A7F80 /* ViewController.swift */; };
@@ -51,7 +50,6 @@
 		5003207E21B6B12400CCD441 /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
 		5003208021B6C4C900CCD441 /* CustomSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectorTableViewController.swift; sourceTree = "<group>"; };
 		501294D621B58CFE0089A24F /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
-		501294D821B58E4B0089A24F /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		501294DA21B58FE40089A24F /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		5094D8AC21B17C64004A7F80 /* forms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = forms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094D8AF21B17C64004A7F80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			children = (
 				5094D8E221B18B36004A7F80 /* ProfileViewController.swift */,
 				501294DA21B58FE40089A24F /* GroupsViewController.swift */,
-				501294D821B58E4B0089A24F /* UsersViewController.swift */,
 				5003207C21B69BD000CCD441 /* UsersTableViewController.swift */,
 				501294D621B58CFE0089A24F /* SideMenuTableViewController.swift */,
 				5094D8B121B17C64004A7F80 /* ViewController.swift */,
@@ -368,7 +365,6 @@
 				501294DB21B58FE40089A24F /* GroupsViewController.swift in Sources */,
 				5003207D21B69BD000CCD441 /* UsersTableViewController.swift in Sources */,
 				5094D8B221B17C64004A7F80 /* ViewController.swift in Sources */,
-				501294D921B58E4B0089A24F /* UsersViewController.swift in Sources */,
 				5094D8B021B17C64004A7F80 /* AppDelegate.swift in Sources */,
 				5003207F21B6B12400CCD441 /* EditUserViewController.swift in Sources */,
 				5003208121B6C4C900CCD441 /* CustomSelectorTableViewController.swift in Sources */,

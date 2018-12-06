@@ -16,38 +16,16 @@ class UsersTableViewController: UITableViewController {
     var all_users = [String]()
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     var headers: HTTPHeaders  = [:]
+    var rowIndex = 0
     
-    @IBAction func cancel(segue:UIStoryboardSegue) {
-    }
-    @IBAction func done(segue:UIStoryboardSegue) {
-       /* let userDetailVC = segue.source as! EditUserViewController
-        */
-    }
-    
-   /* @IBAction func done(segue:UIStoryboardSegue) {
-        let userDetailVC = segue.source as! EditUserViewController
-        newUser = userDetailVC.newUserName
-        all_users.append(newUser)
-        tableView.reloadData()
-        } */
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if self.revealViewController() != nil {
-            self.menuBarButton.target = self.revealViewController()
-            self.menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+    func getAllUsers() {
         let defaultValues = UserDefaults.standard
         if let token = defaultValues.string(forKey: "token"){
-            //setting the name to label
             headers = [
                 "Authorization": token,
                 "Accept": "application/json"
             ]
         }else{
-            //send back to login view controller
         }
         Alamofire.request(GET_ALL_USERS, method: .get, encoding:JSONEncoding.default, headers: self.headers).validate().responseJSON
             {
@@ -63,6 +41,45 @@ class UsersTableViewController: UITableViewController {
         }
         
     }
+    
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+    }
+    @IBAction func done(segue:UIStoryboardSegue) {
+        print("tableViewDone!")
+        self.getAllUsers()
+    }
+
+    
+   /* @IBAction func done(segue:UIStoryboardSegue) {
+        let userDetailVC = segue.source as! EditUserViewController
+        newUser = userDetailVC.newUserName
+        all_users.append(newUser)
+        tableView.reloadData()
+        } */
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.reloadData()
+        if self.revealViewController() != nil {
+            self.menuBarButton.target = self.revealViewController()
+            self.menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.getAllUsers()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addUserSegue"{
+            let vc = segue.destination as? EditUserViewController
+            vc?.currentTitle = "Add User"
+        }
+        if segue.identifier == "editUserSegue"{
+            let vc = segue.destination as? EditUserViewController
+            vc?.currentTitle = "Edit User"
+        }
+    }
+        
 
     // MARK: - Table view data source
 
@@ -82,6 +99,11 @@ class UsersTableViewController: UITableViewController {
         cell.textLabel?.text = all_users[indexPath.row]
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowIndex = indexPath.row
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

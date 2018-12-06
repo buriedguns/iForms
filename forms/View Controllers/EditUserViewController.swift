@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import Alamofire
 
 class EditUserViewController: ViewController, UITextFieldDelegate {
-
+    
+    var currentTitle = ""
+    var headers: HTTPHeaders  = [:]
+    let CREATE_USER_URL = "https://forms-auth-nightly.teh-lab.ru/rest/users"
     var newUserName: String = ""
     var newIdentificatorAD: String = ""
     var newFullName: String = ""
     var newEMail: String = ""
-    var newPermissions : Array = [String] ()
-    var newGroups: Array = [String] ()
+    var newPermissions = [String]()
+    var newGroups = [String]()
     var newDepartment : String = ""
     
+    @IBOutlet weak var customUserTitle: UINavigationItem!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var identificatorAD: UITextField!
     @IBOutlet weak var fullName: UITextField!
@@ -28,23 +33,35 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-            
-            performSegue(withIdentifier: "groupSegue", sender: self)
-            
-            return false
+        let defaultValues = UserDefaults.standard
+        if let token = defaultValues.string(forKey: "token"){
+            print(self.permissions)
+            headers = [
+                "Authorization": token,
+                "Accept": "application/json"
+            ]
+        }
+        switch currentTitle {
+        case "Add User":
+            self.customUserTitle.title = currentTitle
+        case "Edit User":
+            self.customUserTitle.title = currentTitle
+        default:
+            print("!")
         }
     }
     @IBAction func cancel(segue:UIStoryboardSegue) {
+        
     }
     @IBAction func done(segue:UIStoryboardSegue) {
+
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "doneSegue" {
-            if let un = userName.text{
-                newUserName = un
+            if let userName = userName.text{
+                newUserName = userName
             }
             if let id = identificatorAD.text {
                 newIdentificatorAD = id
@@ -55,18 +72,33 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
             if let eMail = eMail.text{
                 newEMail = eMail
             }
-            if permissions.count > 0{
-                for i in permissions{
+            for i in permissions{
+                if i.text! != ""{
                     newPermissions.append(i.text!)
                 }
             }
-            if groups.count > 0 {
-                for i in groups{
+            for i in groups{
+                if i.text! != ""{
                     newGroups.append(i.text!)
                 }
             }
             if let department = department.text{
                 newDepartment = department
+            }
+            
+            let parameters: [String : Any] = ["username":self.newFullName,
+                                              "permissions": self.newPermissions,
+                                              "groups": self.newGroups,
+                                              "ldapId": self.newIdentificatorAD,
+                                              "displayName": self.newFullName,
+                                              "departamentDisplayName": self.newDepartment,
+                                              "mail": self.newEMail]
+            print(parameters)
+            Alamofire.request(self.CREATE_USER_URL, method: .post, parameters: parameters, encoding:
+                JSONEncoding.default, headers: headers).responseString
+                {
+                    response in
+                    print(response)
             }
         }
         if segue.identifier == "groupSegue"{
@@ -78,6 +110,10 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
             vc?.currentTitle = "Permissions"
         }
     }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

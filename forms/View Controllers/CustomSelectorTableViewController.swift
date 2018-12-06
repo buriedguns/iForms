@@ -11,8 +11,29 @@ import Alamofire
 
 class CustomSelectorTableViewController: UsersTableViewController {
     
+    var all_entities_in_selector = [String:String]()
     var currentTitle = ""
-    var URLS = ["https://forms-auth-nightly.teh-lab.ru/rest/groups?offset=0&limit=500",]
+    var URLS = ["groups":"https://forms-auth-nightly.teh-lab.ru/rest/groups?offset=0&limit=500",]
+    
+    func get_all_groups() {
+        var all_groups = [String:String]()
+        Alamofire.request(URLS["groups"]!, method: .get, encoding:JSONEncoding.default, headers: self.headers).validate().responseJSON
+            {
+                response in
+                switch response.result {
+                case .success:
+                    guard let jsonArray = response.result.value as? NSArray else { return }
+                    let group_ids = jsonArray.value(forKey: "id") as! NSArray as! Array<String>
+                    let group_names = jsonArray.value(forKey: "displayName") as! NSArray as! Array<String>
+                    for (i, y) in zip(group_ids, group_names) {
+                        all_groups[i] = y
+                    }
+                    self.all_entities_in_selector = all_groups
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     
     @IBOutlet weak var customSelectorTitle: UINavigationItem!
     
@@ -20,27 +41,10 @@ class CustomSelectorTableViewController: UsersTableViewController {
         super.viewDidLoad()
         switch currentTitle {
         case "Groups":
-            var all_groups = [String:String]()
             self.customSelectorTitle.title = currentTitle
-            Alamofire.request(URLS[0], method: .get, encoding:JSONEncoding.default, headers: self.headers).validate().responseJSON
-                {
-                    response in
-                    switch response.result {
-                    case .success:
-                        guard let jsonArray = response.result.value as? NSArray else { return }
-                        let group_ids = jsonArray.value(forKey: "id") as! NSArray as! Array<String>
-                        let group_names = jsonArray.value(forKey: "displayName") as! NSArray as! Array<String>
-                        for (i, y) in zip(group_ids, group_names) {
-                            all_groups[y] = i
-                        }
-                        print(all_groups)
-                        self.tableView.reloadData()
-                    case .failure(let error):
-                        print(error)
-                    }
-            }
+            self.get_all_groups()
         case "Permissions":
-            print("HEY")
+            self.customSelectorTitle.title = currentTitle
         default:
             print("!")
         }
@@ -52,21 +56,18 @@ class CustomSelectorTableViewController: UsersTableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.all_entities_in_selector.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "selectorCell", for: indexPath)
+        
+        cell.textLabel?.text = Array(self.all_entities_in_selector.values)[indexPath.row]
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
