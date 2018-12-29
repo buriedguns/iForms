@@ -13,12 +13,12 @@ class UsersTableViewController: UITableViewController {
     
     var newUser: String = ""
     let GET_ALL_USERS = "https://forms-auth-nightly.teh-lab.ru/rest/users?offset=0&limit=500"
-    var all_users = [String]()
+    var all_users = [User]()
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     var headers: HTTPHeaders  = [:]
     var rowIndex = 0
     
-    func getAllUsers() {
+    /*func getAllUsers() {
         let defaultValues = UserDefaults.standard
         if let token = defaultValues.string(forKey: "token"){
             headers = [
@@ -26,6 +26,7 @@ class UsersTableViewController: UITableViewController {
                 "Accept": "application/json"
             ]
         }else{
+            
         }
         Alamofire.request(GET_ALL_USERS, method: .get, encoding:JSONEncoding.default, headers: self.headers).validate().responseJSON
             {
@@ -40,13 +41,15 @@ class UsersTableViewController: UITableViewController {
                 }
         }
         
-    }
+    }*/
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
     }
     @IBAction func done(segue:UIStoryboardSegue) {
         print("tableViewDone!")
-        self.getAllUsers()
+        APIManager.shared.getAllUsers { (JSON) in
+            self.all_users = JSON["username"].array
+        }
     }
 
     

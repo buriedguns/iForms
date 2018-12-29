@@ -3,5 +3,6 @@
 
 target 'forms' do
  use_frameworks!
- pod 'Alamofire', '~> 4.3'
+ pod 'Alamofire'
+ pod 'SwiftyJSON'
 end
