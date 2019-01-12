@@ -18,6 +18,32 @@ class UsersTableViewController: UITableViewController {
     var headers: HTTPHeaders  = [:]
     var rowIndex = 0
     
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        if self.revealViewController() != nil {
+            self.menuBarButton.target = self.revealViewController()
+            self.menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        loadUsers()
+    }
+    
+    func loadUsers() {
+        APIManager.shared.getAllUsers { (JSON) in
+            self.all_users = []
+            if let tempUsers = JSON.array {
+                for i in tempUsers {
+                    let user = User(json: i)
+                    self.all_users.append(user)
+                }
+                self.tableView.reloadData()
+            }
+            print(self.all_users)
+        }
+    }
+    
     /*func getAllUsers() {
         let defaultValues = UserDefaults.standard
         if let token = defaultValues.string(forKey: "token"){
@@ -44,12 +70,10 @@ class UsersTableViewController: UITableViewController {
     }*/
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
+        
     }
     @IBAction func done(segue:UIStoryboardSegue) {
-        print("tableViewDone!")
-        APIManager.shared.getAllUsers { (JSON) in
-            self.all_users = JSON["username"].array
-        }
+        
     }
 
     
@@ -59,18 +83,6 @@ class UsersTableViewController: UITableViewController {
         all_users.append(newUser)
         tableView.reloadData()
         } */
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.reloadData()
-        if self.revealViewController() != nil {
-            self.menuBarButton.target = self.revealViewController()
-            self.menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.getAllUsers()
-        }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addUserSegue"{
@@ -79,7 +91,11 @@ class UsersTableViewController: UITableViewController {
         }
         if segue.identifier == "editUserSegue"{
             let vc = segue.destination as? EditUserViewController
+            vc?.currentUser = self.all_users[tableView.indexPathForSelectedRow!.row]
+            let uN = vc!.currentUser!.displayName!
+            print(uN)
             vc?.currentTitle = "Edit User"
+            vc?.userName.text = "Бабущка"
         }
     }
         
@@ -98,8 +114,10 @@ class UsersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-
-        cell.textLabel?.text = all_users[indexPath.row]
+        let user = all_users[indexPath.row]
+        
+        cell.textLabel?.text = user.displayName
+        
         return cell
     }
     

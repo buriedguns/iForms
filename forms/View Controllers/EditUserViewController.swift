@@ -21,6 +21,7 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
     var newPermissions = [String]()
     var newGroups = [String]()
     var newDepartment : String = ""
+    var currentUser: User?
     
     @IBOutlet weak var customUserTitle: UINavigationItem!
     @IBOutlet weak var userName: UITextField!

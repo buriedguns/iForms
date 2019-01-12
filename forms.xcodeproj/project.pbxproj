@@ -25,6 +25,7 @@
 		5094D8D021B17C65004A7F80 /* formsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8CF21B17C65004A7F80 /* formsUITests.swift */; };
 		5094D8E321B18B36004A7F80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8E221B18B36004A7F80 /* ProfileViewController.swift */; };
 		ACAA9F4184D4B75100D4BD8D /* Pods_forms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C701B4102735C773F625C897 /* Pods_forms.framework */; };
+		EB28226A21D7EC5500A77859 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB28226921D7EC5500A77859 /* UserViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		5094D8D121B17C65004A7F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5094D8E221B18B36004A7F80 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C701B4102735C773F625C897 /* Pods_forms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_forms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB28226921D7EC5500A77859 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,10 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				500D4A0B21D7A22E00A82B4F /* Manager */,
-				5094D8AF21B17C64004A7F80 /* AppDelegate.swift */,
 				5003207A21B6860D00CCD441 /* View Controllers */,
 				500D4A0A21D782B600A82B4F /* Model */,
+				EB28226821D7EC1400A77859 /* Views */,
 				5094D8B321B17C64004A7F80 /* Main.storyboard */,
+				5094D8AF21B17C64004A7F80 /* AppDelegate.swift */,
 				5094D8B621B17C65004A7F80 /* Assets.xcassets */,
 				5094D8B821B17C65004A7F80 /* LaunchScreen.storyboard */,
 				5094D8BB21B17C65004A7F80 /* Info.plist */,
@@ -203,6 +206,14 @@
 				5094D8D121B17C65004A7F80 /* Info.plist */,
 			);
 			path = formsUITests;
+			sourceTree = "<group>";
+		};
+		EB28226821D7EC1400A77859 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB28226921D7EC5500A77859 /* UserViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +406,7 @@
 				5094D8B021B17C64004A7F80 /* AppDelegate.swift in Sources */,
 				5003207F21B6B12400CCD441 /* EditUserViewController.swift in Sources */,
 				500D4A0D21D7A23F00A82B4F /* ApiManager.swift in Sources */,
+				EB28226A21D7EC5500A77859 /* UserViewCell.swift in Sources */,
 				5003208121B6C4C900CCD441 /* CustomSelectorTableViewController.swift in Sources */,
 				5094D8E321B18B36004A7F80 /* ProfileViewController.swift in Sources */,
 				500D4A0921D782B000A82B4F /* User.swift in Sources */,

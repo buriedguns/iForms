@@ -42,7 +42,7 @@ class APIManager {
         }
     }
     
-    func requestServer(_ metaDataBaseURL: Bool, _ method: HTTPMethod, _ path: String, params: [String: Any]?, _ encoding: ParameterEncoding,_ completionHandler: @escaping(JSON) -> Void) {
+    func requestServer(_ metaDataBaseURL: Bool, _ method: HTTPMethod, _ path: String, params: [String: Any]?, queryItems: [NSURLQueryItem]?, _ encoding: ParameterEncoding,_ completionHandler: @escaping(JSON) -> Void) {
         
         var url: URL?
         
@@ -52,21 +52,31 @@ class APIManager {
             url = authBaseURL!.appendingPathComponent(path)
         }
         
-            Alamofire.request(url!, method: method, parameters: params, encoding: encoding, headers: headers).responseJSON{ response in
-                
+        var header = self.headers
+        header = ["Authorization": self.accessToken,
+                  "Accept": "application/json"]
+        
+        
+        let urlComps = NSURLComponents(url: url!, resolvingAgainstBaseURL: false)!
+        urlComps.queryItems = queryItems as [URLQueryItem]?
+        url = urlComps.url!
+        
+            Alamofire.request(url!, method: method, parameters: params, encoding: encoding, headers: header).responseJSON{ response in
                 switch response.result {
                 case .success(let value):
                     let jsonData = JSON(value)
                     completionHandler(jsonData)
+                    print(jsonData)
                     break
                 case .failure:
                     break
                 }
+
             }
         }
     
-    func getAllUsers( completionHandler: @escaping(JSON) -> Void) {
-        let path = "/rest/users?offset=0&limit=500"
-        requestServer(false, .get, path, params: nil, JSONEncoding.default, completionHandler)
+    func getAllUsers(completionHandler: @escaping(JSON) -> Void) {
+        let path = "/rest/users"
+        requestServer(false, .get, path, params: nil, queryItems: [NSURLQueryItem(name: "offset", value: "0"), NSURLQueryItem(name: "limit", value: "500")],  JSONEncoding.default, completionHandler)
     }
 }
