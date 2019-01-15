@@ -66,7 +66,6 @@ class APIManager {
                 case .success(let value):
                     let jsonData = JSON(value)
                     completionHandler(jsonData)
-                    print(jsonData)
                     break
                 case .failure:
                     break

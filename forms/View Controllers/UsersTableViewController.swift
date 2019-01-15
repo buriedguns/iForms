@@ -40,7 +40,6 @@ class UsersTableViewController: UITableViewController {
                 }
                 self.tableView.reloadData()
             }
-            print(self.all_users)
         }
     }
     
@@ -95,7 +94,6 @@ class UsersTableViewController: UITableViewController {
             let uN = vc!.currentUser!.displayName!
             print(uN)
             vc?.currentTitle = "Edit User"
-            vc?.userName.text = "Бабущка"
         }
     }
         

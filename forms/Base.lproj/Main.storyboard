@@ -362,11 +362,13 @@
                                     <navigationItem title="Add/Edit User" id="wro-2y-PiQ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fL3-8U-yE3">
                                             <connections>
+                                                <action selector="cancelWithSegue:" destination="l5k-vb-GoW" id="6J3-oo-HsK"/>
                                                 <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="cancelSegue" unwindAction="cancelWithSegue:" id="KX3-RX-chP"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uTo-gp-g7b">
                                             <connections>
+                                                <action selector="doneWithSegue:sender:" destination="l5k-vb-GoW" id="zhC-Gi-DCd"/>
                                                 <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="doneSegue" unwindAction="doneWithSegue:" id="pXF-Zz-3Et"/>
                                             </connections>
                                         </barButtonItem>
@@ -378,24 +380,36 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="userNameHasBeenChanged:" destination="l5k-vb-GoW" eventType="editingChanged" id="bqc-3A-e6w"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Идентификатор AD/LDAP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSV-RF-p1s">
                                 <rect key="frame" x="16" y="143" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ldapIdHasChanged:" destination="l5k-vb-GoW" eventType="valueChanged" id="Bm2-3u-TkR"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ФИО" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rei-hc-Y87">
                                 <rect key="frame" x="16" y="189" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="displayNameHasBeenChanged:" destination="l5k-vb-GoW" eventType="editingChanged" id="NkM-sg-YPm"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNr-IE-hs2">
                                 <rect key="frame" x="16" y="235" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="emailHasBeenChanged:" destination="l5k-vb-GoW" eventType="editingChanged" id="8bG-kM-ExL"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пермиссии" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTI-WH-8Bq">
                                 <rect key="frame" x="16" y="281" width="278" height="30"/>
@@ -418,6 +432,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="departmentHasBeenChanged:" destination="l5k-vb-GoW" eventType="editingChanged" id="poc-lQ-6ip"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MJ-6D-XBU">
                                 <rect key="frame" x="299" y="281" width="60" height="30"/>
@@ -483,8 +500,10 @@
                         <viewLayoutGuide key="safeArea" id="p66-ov-g02"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="fL3-8U-yE3" id="1bh-iF-9wh"/>
                         <outlet property="customUserTitle" destination="wro-2y-PiQ" id="bTT-14-uBP"/>
                         <outlet property="department" destination="0y3-O8-pFc" id="DWv-zf-6x6"/>
+                        <outlet property="doneButton" destination="uTo-gp-g7b" id="4aw-h8-zLw"/>
                         <outlet property="eMail" destination="KNr-IE-hs2" id="7sd-K8-Lq0"/>
                         <outlet property="fullName" destination="Rei-hc-Y87" id="vL1-RA-EgH"/>
                         <outlet property="identificatorAD" destination="nSV-RF-p1s" id="OUo-RB-mPk"/>
@@ -496,7 +515,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OxR-rN-2VH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jEc-Ps-1Qu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="729" y="1852"/>
+            <point key="canvasLocation" x="-42" y="2594"/>
         </scene>
         <!--Groups-->
         <scene sceneID="jts-3M-R2d">
@@ -531,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUe-rC-sB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422" y="1852"/>
+            <point key="canvasLocation" x="772" y="1852"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bkN-Zw-xq7">
@@ -549,7 +568,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqa-Eo-LzA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2422" y="1043"/>
+            <point key="canvasLocation" x="772" y="1031"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N2p-bK-f4I">
@@ -617,14 +636,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5V-oq-ewZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AVN-Cc-3mh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="1852"/>
+            <point key="canvasLocation" x="-42" y="3310"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon_menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hy4-Nl-Hv1"/>
+        <segue reference="GZg-fB-hXs"/>
         <segue reference="EBm-Pk-hmP"/>
         <segue reference="O49-hP-amI"/>
     </inferredMetricsTieBreakers>
