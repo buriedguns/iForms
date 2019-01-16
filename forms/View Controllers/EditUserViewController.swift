@@ -8,13 +8,13 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
-class EditUserViewController: ViewController, UITextFieldDelegate {
+class EditUserViewController: UIViewController, UITextFieldDelegate {
     
     var currentTitle = ""
     var headers: HTTPHeaders  = [:]
     let CREATE_USER_URL = "https://forms-auth-nightly.teh-lab.ru/rest/users"
-    var newUserName: String = ""
     var newIdentificatorAD: String = ""
     var newFullName: String = ""
     var newEMail: String = ""
@@ -23,6 +23,7 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
     var newDepartment : String = ""
     var isUserChanged = false
     var currentUser: User?
+    let activityIndicator = UIActivityIndicatorView()
     
     
     @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -35,14 +36,6 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
     @IBOutlet var permissions: [UITextField]!
     @IBOutlet var groups: [UITextField]!
     @IBOutlet weak var department: UITextField!
-    
-    @IBAction func cancel(segue:UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func done(segue:UIStoryboardSegue, sender: Any) {
-        
-    }
     
     /*@IBAction func userNameHasBeenChanged(_ sender: UITextField) {
         if let text = sender.text {
@@ -98,11 +91,11 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setCurrentUserDataToTextFields()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCurrentUserDataToTextFields()
         self.userName.isEnabled = false
         self.userName.textColor = UIColor.gray
     }
@@ -110,25 +103,15 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         isThereNewData()
         if segue.identifier == "doneSegue" {
-            if self.isUserChanged == false{
-                print("Data isn't changed")
-                //performSegue(withIdentifier: "doneSegue", sender: self)
-            } else {
-                print("Data Changed!")
+            if self.isUserChanged == true{
+                let parameters: [String : Any] = ["ldapId": self.identificatorAD.text!,
+                                                  "displayName": self.fullName.text!,
+                                                  "departamentDisplayName": self.department.text!,
+                                                  "mail": self.eMail.text!]
+                
+                APIManager.shared.editUser((currentUser?.userName)!, parameters) { JSON in
+                }
             }
-            
-            /*let parameters: [String : Any] = ["username":self.newFullName,
-                                              "permissions": self.newPermissions,
-                                              "groups": self.newGroups,
-                                              "ldapId": self.newIdentificatorAD,
-                                              "displayName": self.newFullName,
-                                              "departamentDisplayName": self.newDepartment,
-                                              "mail": self.newEMail]
-            Alamofire.request(self.CREATE_USER_URL, method: .post, parameters: parameters, encoding:
-                JSONEncoding.default, headers: headers).responseString
-                {
-                    response in
-            }*/
         }
         if segue.identifier == "groupSegue"{
             let vc = segue.destination as? CustomSelectorTableViewController
@@ -151,8 +134,7 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
     }
     
     func isThereNewData() {
-        if currentUser?.userName == self.userName.text &&
-            currentUser?.ldapId == self.identificatorAD.text &&
+        if currentUser?.ldapId == self.identificatorAD.text &&
             currentUser?.displayName == self.fullName.text &&
             currentUser?.mail == self.eMail.text &&
             currentUser?.departmentDisplayName == self.department.text {
@@ -160,27 +142,5 @@ class EditUserViewController: ViewController, UITextFieldDelegate {
         } else {
             self.isUserChanged = true
         }
-        print("Check is complete!")
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    //deprecated
-    /*let defaultValues = UserDefaults.standard
-     if let token = defaultValues.string(forKey: "token"){
-     headers = [
-     "Authorization": token,
-     "Accept": "application/json"
-     ]
-     }*/
 }

@@ -368,8 +368,8 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uTo-gp-g7b">
                                             <connections>
-                                                <action selector="doneWithSegue:sender:" destination="l5k-vb-GoW" id="zhC-Gi-DCd"/>
-                                                <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="doneSegue" unwindAction="doneWithSegue:" id="pXF-Zz-3Et"/>
+                                                <action selector="doneWithSegue:sender:" destination="l5k-vb-GoW" id="xpF-h1-rKW"/>
+                                                <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="doneSegue" unwindAction="doneWithSegue:" id="lhk-CW-qwG"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -515,7 +515,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OxR-rN-2VH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jEc-Ps-1Qu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="2594"/>
+            <point key="canvasLocation" x="-42" y="2598"/>
         </scene>
         <!--Groups-->
         <scene sceneID="jts-3M-R2d">
@@ -606,11 +606,7 @@
                                             <segue destination="AVN-Cc-3mh" kind="unwind" identifier="cancelSegue" unwindAction="cancelWithSegue:" id="g0l-He-HaI"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="done" id="FLS-gw-iXK">
-                                        <connections>
-                                            <segue destination="AVN-Cc-3mh" kind="unwind" identifier="doneSegue" unwindAction="doneWithSegue:" id="jdX-RX-isW"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="done" id="FLS-gw-iXK"/>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -643,7 +639,7 @@
         <image name="icon_menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GZg-fB-hXs"/>
+        <segue reference="Hy4-Nl-Hv1"/>
         <segue reference="EBm-Pk-hmP"/>
         <segue reference="O49-hP-amI"/>
     </inferredMetricsTieBreakers>

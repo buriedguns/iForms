@@ -12,14 +12,12 @@ import Alamofire
 class UsersTableViewController: UITableViewController {
     
     var newUser: String = ""
-    let GET_ALL_USERS = "https://forms-auth-nightly.teh-lab.ru/rest/users?offset=0&limit=500"
     var all_users = [User]()
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     var headers: HTTPHeaders  = [:]
     var rowIndex = 0
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         if self.revealViewController() != nil {
@@ -32,7 +30,7 @@ class UsersTableViewController: UITableViewController {
     
     func loadUsers() {
         APIManager.shared.getAllUsers { (JSON) in
-            self.all_users = []
+            self.all_users.removeAll()
             if let tempUsers = JSON.array {
                 for i in tempUsers {
                     let user = User(json: i)
@@ -72,7 +70,7 @@ class UsersTableViewController: UITableViewController {
         
     }
     @IBAction func done(segue:UIStoryboardSegue) {
-        
+        viewDidLoad()
     }
 
     
@@ -91,8 +89,6 @@ class UsersTableViewController: UITableViewController {
         if segue.identifier == "editUserSegue"{
             let vc = segue.destination as? EditUserViewController
             vc?.currentUser = self.all_users[tableView.indexPathForSelectedRow!.row]
-            let uN = vc!.currentUser!.displayName!
-            print(uN)
             vc?.currentTitle = "Edit User"
         }
     }

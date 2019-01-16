@@ -24,6 +24,7 @@
 		5094D8C521B17C65004A7F80 /* formsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8C421B17C65004A7F80 /* formsTests.swift */; };
 		5094D8D021B17C65004A7F80 /* formsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8CF21B17C65004A7F80 /* formsUITests.swift */; };
 		5094D8E321B18B36004A7F80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8E221B18B36004A7F80 /* ProfileViewController.swift */; };
+		50AE47AB21EF28950078FCEA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AE47AA21EF28950078FCEA /* Helpers.swift */; };
 		ACAA9F4184D4B75100D4BD8D /* Pods_forms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C701B4102735C773F625C897 /* Pods_forms.framework */; };
 		EB28226A21D7EC5500A77859 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB28226921D7EC5500A77859 /* UserViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		5094D8CF21B17C65004A7F80 /* formsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formsUITests.swift; sourceTree = "<group>"; };
 		5094D8D121B17C65004A7F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5094D8E221B18B36004A7F80 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		50AE47AA21EF28950078FCEA /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C701B4102735C773F625C897 /* Pods_forms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_forms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB28226921D7EC5500A77859 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +148,7 @@
 			children = (
 				500D4A0C21D7A23F00A82B4F /* ApiManager.swift */,
 				500D4A0E21D7A35500A82B4F /* Constants.swift */,
+				50AE47AA21EF28950078FCEA /* Helpers.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5003207B21B6876E00CCD441 /* SWRevealViewController.m in Sources */,
+				50AE47AB21EF28950078FCEA /* Helpers.swift in Sources */,
 				501294DB21B58FE40089A24F /* GroupsViewController.swift in Sources */,
 				5003207D21B69BD000CCD441 /* UsersTableViewController.swift in Sources */,
 				5094D8B221B17C64004A7F80 /* LoginViewController.swift in Sources */,

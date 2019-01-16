@@ -78,4 +78,9 @@ class APIManager {
         let path = "/rest/users"
         requestServer(false, .get, path, params: nil, queryItems: [NSURLQueryItem(name: "offset", value: "0"), NSURLQueryItem(name: "limit", value: "500")],  JSONEncoding.default, completionHandler)
     }
+    
+    func editUser(_ userName: String,_ params: [String: Any]?, completionHandler: @escaping(JSON) -> Void) {
+        let path = "rest/users/\(userName)"
+        requestServer(false, .put, path, params: params, queryItems: nil, JSONEncoding.default, completionHandler)
+    }
 }
