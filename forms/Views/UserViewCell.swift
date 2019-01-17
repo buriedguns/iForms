@@ -9,9 +9,6 @@
 import UIKit
 
 class UserViewCell: UITableViewCell {
-    
-    
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()

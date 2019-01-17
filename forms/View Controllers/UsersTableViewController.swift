@@ -16,85 +16,59 @@ class UsersTableViewController: UITableViewController {
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     var headers: HTTPHeaders  = [:]
     var rowIndex = 0
+    let activityIndicator = UIActivityIndicatorView()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadUsers()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if self.revealViewController() != nil {
             self.menuBarButton.target = self.revealViewController()
             self.menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        loadUsers()
     }
+    
     
     func loadUsers() {
-        APIManager.shared.getAllUsers { (JSON) in
-            self.all_users.removeAll()
-            if let tempUsers = JSON.array {
-                for i in tempUsers {
-                    let user = User(json: i)
-                    self.all_users.append(user)
+        self.all_users.removeAll()
+            APIManager.shared.getAllUsers { (JSON) in
+                if let tempUsers = JSON.array {
+                    for i in tempUsers {
+                        let user = User(json: i)
+                        self.all_users.append(user)
+                    }
+                    self.tableView.reloadData()
                 }
-                self.tableView.reloadData()
             }
         }
-    }
     
-    /*func getAllUsers() {
-        let defaultValues = UserDefaults.standard
-        if let token = defaultValues.string(forKey: "token"){
-            headers = [
-                "Authorization": token,
-                "Accept": "application/json"
-            ]
-        }else{
-            
-        }
-        Alamofire.request(GET_ALL_USERS, method: .get, encoding:JSONEncoding.default, headers: self.headers).validate().responseJSON
-            {
-                response in
-                switch response.result {
-                case .success:
-                    guard let jsonArray = response.result.value as? NSArray else { return }
-                    self.all_users = (jsonArray.value(forKey: "username") as! NSArray) as! Array<String>
-                    self.tableView.reloadData()
-                case .failure(let error):
-                    print(error)
-                }
-        }
-        
-    }*/
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
-        
+        self.tableView.reloadData()
     }
+    
+    
     @IBAction func done(segue:UIStoryboardSegue) {
-        viewDidLoad()
+        Helpers.showActivityIndicator(self.activityIndicator, view)
+        self.viewDidAppear(false)
+        Helpers.hideActivityIndicator(self.activityIndicator)
     }
 
     
-   /* @IBAction func done(segue:UIStoryboardSegue) {
-        let userDetailVC = segue.source as! EditUserViewController
-        newUser = userDetailVC.newUserName
-        all_users.append(newUser)
-        tableView.reloadData()
-        } */
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addUserSegue"{
-            let vc = segue.destination as? EditUserViewController
+            let vc = segue.destination as? UserViewController
             vc?.currentTitle = "Add User"
         }
         if segue.identifier == "editUserSegue"{
-            let vc = segue.destination as? EditUserViewController
+            let vc = segue.destination as? UserViewController
             vc?.currentUser = self.all_users[tableView.indexPathForSelectedRow!.row]
             vc?.currentTitle = "Edit User"
         }
     }
-        
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -113,56 +87,11 @@ class UsersTableViewController: UITableViewController {
         cell.textLabel?.text = user.displayName
         
         return cell
+       
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         rowIndex = indexPath.row
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -1,4 +1,3 @@
-//
 //  ApiManager.swift
 //  forms
 //
@@ -61,26 +60,36 @@ class APIManager {
         urlComps.queryItems = queryItems as [URLQueryItem]?
         url = urlComps.url!
         
-            Alamofire.request(url!, method: method, parameters: params, encoding: encoding, headers: header).responseJSON{ response in
-                switch response.result {
-                case .success(let value):
-                    let jsonData = JSON(value)
-                    completionHandler(jsonData)
-                    break
-                case .failure:
-                    break
-                }
-
+        Alamofire.request(url!, method: method, parameters: params, encoding: encoding, headers: header).responseJSON{ response in
+            switch response.result {
+            case .success(let value):
+                let jsonData = JSON(value)
+                completionHandler(jsonData)
+                break
+            case .failure:
+                break
             }
+            
         }
+    }
     
     func getAllUsers(completionHandler: @escaping(JSON) -> Void) {
         let path = "/rest/users"
         requestServer(false, .get, path, params: nil, queryItems: [NSURLQueryItem(name: "offset", value: "0"), NSURLQueryItem(name: "limit", value: "500")],  JSONEncoding.default, completionHandler)
     }
     
+    func createUser(_ params: [String: Any]?, completionHandler: @escaping(JSON) -> Void) {
+        let path = "rest/users"
+        requestServer(false, .post, path, params: params, queryItems: nil, JSONEncoding.default, completionHandler)
+    }
+    
     func editUser(_ userName: String,_ params: [String: Any]?, completionHandler: @escaping(JSON) -> Void) {
         let path = "rest/users/\(userName)"
         requestServer(false, .put, path, params: params, queryItems: nil, JSONEncoding.default, completionHandler)
+    }
+    
+    func getAllGroups(completionHandler: @escaping(JSON) -> Void) {
+        let path = "/rest/groups"
+        requestServer(false, .get, path, params: nil, queryItems: [NSURLQueryItem(name: "offset", value: "0"), NSURLQueryItem(name: "limit", value: "500")],  JSONEncoding.default, completionHandler)
     }
 }
