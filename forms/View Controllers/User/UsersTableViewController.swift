@@ -46,12 +46,12 @@ class UsersTableViewController: UITableViewController {
         }
     
     
-    @IBAction func cancel(segue:UIStoryboardSegue) {
+    @IBAction func cancelUserCreation(segue:UIStoryboardSegue) {
         self.tableView.reloadData()
     }
     
     
-    @IBAction func done(segue:UIStoryboardSegue) {
+    @IBAction func doneUserCreation(segue:UIStoryboardSegue) {
         Helpers.showActivityIndicator(self.activityIndicator, view)
         self.viewDidAppear(false)
         Helpers.hideActivityIndicator(self.activityIndicator)

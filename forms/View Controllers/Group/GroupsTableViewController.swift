@@ -15,6 +15,11 @@ class GroupsTableViewController: UITableViewController {
 
     
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadGroups()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +43,26 @@ class GroupsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addGroupSegue"{
+            let vc = segue.destination as? GroupViewController
+            vc?.currentTitle = "Add Group"
+        }
+        if segue.identifier == "editGroupSegue"{
+            let vc = segue.destination as? GroupViewController
+            vc?.currentGroup = self.allGroups[tableView.indexPathForSelectedRow!.row]
+            vc?.currentTitle = "Edit Group"
+        }
+    }
+    
+    @IBAction func cancelGroupCreation(segue: UIStoryboardSegue){
+        self.tableView.reloadData()
+    }
+
+    @IBAction func doneGroupCreation(segue: UIStoryboardSegue){
+       self.viewDidAppear(false)
     }
     
     

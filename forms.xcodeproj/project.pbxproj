@@ -15,7 +15,12 @@
 		500D4A0D21D7A23F00A82B4F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D4A0C21D7A23F00A82B4F /* ApiManager.swift */; };
 		500D4A0F21D7A35500A82B4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D4A0E21D7A35500A82B4F /* Constants.swift */; };
 		501294D721B58CFE0089A24F /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501294D621B58CFE0089A24F /* SideMenuTableViewController.swift */; };
-		501294DB21B58FE40089A24F /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501294DA21B58FE40089A24F /* GroupsViewController.swift */; };
+		501294DB21B58FE40089A24F /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501294DA21B58FE40089A24F /* GroupsTableViewController.swift */; };
+		502DB8FE21F5D26900B0753E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB8FD21F5D26900B0753E /* GroupViewController.swift */; };
+		502DB90321F5F42800B0753E /* AttributesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB90221F5F42800B0753E /* AttributesTableViewController.swift */; };
+		502DB90521F5F47E00B0753E /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB90421F5F47E00B0753E /* Attribute.swift */; };
+		502DB90721F5FD3200B0753E /* AttributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB90621F5FD3200B0753E /* AttributeViewController.swift */; };
+		502DB90921F6428400B0753E /* attributePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB90821F6428400B0753E /* attributePageViewController.swift */; };
 		507A75F521F0B89E006253E8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A75F421F0B89E006253E8 /* Group.swift */; };
 		5094D8B021B17C64004A7F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8AF21B17C64004A7F80 /* AppDelegate.swift */; };
 		5094D8B221B17C64004A7F80 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8B121B17C64004A7F80 /* LoginViewController.swift */; };
@@ -59,7 +64,12 @@
 		500D4A0C21D7A23F00A82B4F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		500D4A0E21D7A35500A82B4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		501294D621B58CFE0089A24F /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
-		501294DA21B58FE40089A24F /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		501294DA21B58FE40089A24F /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		502DB8FD21F5D26900B0753E /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		502DB90221F5F42800B0753E /* AttributesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributesTableViewController.swift; sourceTree = "<group>"; };
+		502DB90421F5F47E00B0753E /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		502DB90621F5FD3200B0753E /* AttributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeViewController.swift; sourceTree = "<group>"; };
+		502DB90821F6428400B0753E /* attributePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attributePageViewController.swift; sourceTree = "<group>"; };
 		507A75F421F0B89E006253E8 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		5094D8AC21B17C64004A7F80 /* forms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = forms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094D8AF21B17C64004A7F80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,12 +137,12 @@
 			isa = PBXGroup;
 			children = (
 				5094D8B121B17C64004A7F80 /* LoginViewController.swift */,
-				501294DA21B58FE40089A24F /* GroupsViewController.swift */,
-				5003207C21B69BD000CCD441 /* UsersTableViewController.swift */,
-				5003207E21B6B12400CCD441 /* UserViewController.swift */,
+				501294D621B58CFE0089A24F /* SideMenuTableViewController.swift */,
+				502DB8FF21F5F33B00B0753E /* User */,
+				502DB90021F5F35F00B0753E /* Group */,
+				502DB90121F5F3F500B0753E /* Attribute */,
 				5003208021B6C4C900CCD441 /* CustomSelectorTableViewController.swift */,
 				5094D8E221B18B36004A7F80 /* ProfileViewController.swift */,
-				501294D621B58CFE0089A24F /* SideMenuTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -142,6 +152,7 @@
 			children = (
 				500D4A0821D782B000A82B4F /* User.swift */,
 				507A75F421F0B89E006253E8 /* Group.swift */,
+				502DB90421F5F47E00B0753E /* Attribute.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +165,34 @@
 				50AE47AA21EF28950078FCEA /* Helpers.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		502DB8FF21F5F33B00B0753E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5003207C21B69BD000CCD441 /* UsersTableViewController.swift */,
+				5003207E21B6B12400CCD441 /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		502DB90021F5F35F00B0753E /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				501294DA21B58FE40089A24F /* GroupsTableViewController.swift */,
+				502DB8FD21F5D26900B0753E /* GroupViewController.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		502DB90121F5F3F500B0753E /* Attribute */ = {
+			isa = PBXGroup;
+			children = (
+				502DB90221F5F42800B0753E /* AttributesTableViewController.swift */,
+				502DB90621F5FD3200B0753E /* AttributeViewController.swift */,
+				502DB90821F6428400B0753E /* attributePageViewController.swift */,
+			);
+			path = Attribute;
 			sourceTree = "<group>";
 		};
 		5094D8A321B17C63004A7F80 = {
@@ -405,19 +444,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502DB8FE21F5D26900B0753E /* GroupViewController.swift in Sources */,
 				5003207B21B6876E00CCD441 /* SWRevealViewController.m in Sources */,
 				50AE47AB21EF28950078FCEA /* Helpers.swift in Sources */,
-				501294DB21B58FE40089A24F /* GroupsViewController.swift in Sources */,
+				501294DB21B58FE40089A24F /* GroupsTableViewController.swift in Sources */,
 				507A75F521F0B89E006253E8 /* Group.swift in Sources */,
 				5003207D21B69BD000CCD441 /* UsersTableViewController.swift in Sources */,
 				5094D8B221B17C64004A7F80 /* LoginViewController.swift in Sources */,
 				5094D8B021B17C64004A7F80 /* AppDelegate.swift in Sources */,
+				502DB90921F6428400B0753E /* attributePageViewController.swift in Sources */,
 				5003207F21B6B12400CCD441 /* UserViewController.swift in Sources */,
 				500D4A0D21D7A23F00A82B4F /* ApiManager.swift in Sources */,
 				EB28226A21D7EC5500A77859 /* UserViewCell.swift in Sources */,
 				5003208121B6C4C900CCD441 /* CustomSelectorTableViewController.swift in Sources */,
+				502DB90521F5F47E00B0753E /* Attribute.swift in Sources */,
 				5094D8E321B18B36004A7F80 /* ProfileViewController.swift in Sources */,
 				500D4A0921D782B000A82B4F /* User.swift in Sources */,
+				502DB90721F5FD3200B0753E /* AttributeViewController.swift in Sources */,
+				502DB90321F5F42800B0753E /* AttributesTableViewController.swift in Sources */,
 				501294D721B58CFE0089A24F /* SideMenuTableViewController.swift in Sources */,
 				500D4A0F21D7A35500A82B4F /* Constants.swift in Sources */,
 			);

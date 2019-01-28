@@ -92,4 +92,19 @@ class APIManager {
         let path = "/rest/groups"
         requestServer(false, .get, path, params: nil, queryItems: [NSURLQueryItem(name: "offset", value: "0"), NSURLQueryItem(name: "limit", value: "500")],  JSONEncoding.default, completionHandler)
     }
+    
+    func createGroup(_ params: [String: Any]?, completionHandler: @escaping(JSON) -> Void) {
+        let path = "rest/groups"
+        requestServer(false, .post, path, params: params, queryItems: nil, JSONEncoding.default, completionHandler)
+    }
+    
+    func editGroup(_ groupName: String,_ params: [String: Any]?, completionHandler: @escaping(JSON) -> Void) {
+        let path = "rest/groups/\(groupName)"
+        requestServer(false, .put, path, params: params, queryItems: nil, JSONEncoding.default, completionHandler)
+    }
+    
+    func getAllAttributes(completionHandler: @escaping(JSON) -> Void) {
+    let path = "/attribute-types/list"
+    requestServer(true, .get, path, params: nil, queryItems: [NSURLQueryItem(name: "offset", value: "0"), NSURLQueryItem(name: "limit", value: "500")],  JSONEncoding.default, completionHandler)
+    }
 }

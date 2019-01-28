@@ -13,12 +13,6 @@ import SwiftyJSON
 class UserViewController: UIViewController, UITextFieldDelegate {
     
     var currentTitle = ""
-    /*var newIdentificatorAD: String = ""
-    var newFullName: String = ""
-    var newEMail: String = ""
-    var newPermissions = [String]()
-    var newGroups = [String]()
-    var newDepartment : String = ""*/
     var isUserChanged = false
     var currentUser: User?
     let activityIndicator = UIActivityIndicatorView()
@@ -34,10 +28,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var permissions: [UITextField]!
     @IBOutlet var groups: [UITextField]!
     @IBOutlet weak var department: UITextField!
-    
-    @IBAction func test(_ sender: Any) {
-        print("I'am entered")
-    }
     
     @IBAction func requiredFieldsAreEmpty(_ sender: UITextField) {
         if userName.text!.isEmpty || fullName.text!.isEmpty || eMail.text!.isEmpty{
