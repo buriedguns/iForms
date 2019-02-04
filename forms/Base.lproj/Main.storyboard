@@ -159,8 +159,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRS-ZW-vFq">
-                                                    <rect key="frame" x="16" y="19" width="60" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Объекты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRS-ZW-vFq">
+                                                    <rect key="frame" x="16" y="19" width="71" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -181,8 +181,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUn-qd-yyz">
-                                                    <rect key="frame" x="16" y="19" width="45" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пользователи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUn-qd-yyz">
+                                                    <rect key="frame" x="16" y="19" width="113" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -206,8 +206,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLR-q0-BGg">
-                                                    <rect key="frame" x="16" y="19" width="56" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Группы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLR-q0-BGg">
+                                                    <rect key="frame" x="16" y="19" width="59" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -231,8 +231,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of attributes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdw-gW-R2u">
-                                                    <rect key="frame" x="16" y="19" width="126" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список атрибутов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdw-gW-R2u">
+                                                    <rect key="frame" x="16" y="19" width="147" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -245,6 +245,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.13112732769999999" green="0.27293479440000001" blue="0.46838361020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="RDN-SM-4Dl" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="p22-O3-GvD"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="RwJ-sW-Ave">
                                         <rect key="frame" x="0.0" y="355" width="375" height="60"/>
@@ -253,8 +256,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of objects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xi-t3-3I7">
-                                                    <rect key="frame" x="16" y="19" width="108" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список объектов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xi-t3-3I7">
+                                                    <rect key="frame" x="16" y="19" width="138" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -363,13 +366,13 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fL3-8U-yE3">
                                             <connections>
                                                 <action selector="cancelWithSegue:" destination="l5k-vb-GoW" id="6J3-oo-HsK"/>
-                                                <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="cancelSegue" unwindAction="cancelWithSegue:" id="KX3-RX-chP"/>
+                                                <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="cancelSegue" unwindAction="cancelUserCreationWithSegue:" id="ufD-bF-asP"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uTo-gp-g7b">
                                             <connections>
                                                 <action selector="doneWithSegue:sender:" destination="l5k-vb-GoW" id="xpF-h1-rKW"/>
-                                                <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="doneSegue" unwindAction="doneWithSegue:" id="lhk-CW-qwG"/>
+                                                <segue destination="jEc-Ps-1Qu" kind="unwind" identifier="doneSegue" unwindAction="doneUserCreationWithSegue:" id="RoU-vm-y1G"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -514,6 +517,104 @@
             </objects>
             <point key="canvasLocation" x="-42" y="2598"/>
         </scene>
+        <!--Group View Controller-->
+        <scene sceneID="5Ls-md-jNZ">
+            <objects>
+                <viewController id="Z39-q3-Dg0" customClass="GroupViewController" customModule="forms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8OK-17-89l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QO-Zn-Fld">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Add/Edit Group" id="Y3v-tl-mrX">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YUr-HL-kIY">
+                                            <connections>
+                                                <segue destination="zU0-kG-cWf" kind="unwind" identifier="cancelSegue" unwindAction="cancelGroupCreationWithSegue:" id="puP-vL-DHX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Z2C-u1-DyW">
+                                            <connections>
+                                                <action selector="done:" destination="zU0-kG-cWf" id="za6-vv-KAP"/>
+                                                <segue destination="zU0-kG-cWf" kind="unwind" identifier="doneSegue" unwindAction="doneGroupCreationWithSegue:" id="nYv-xD-6c6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Код группы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfR-Wh-UGU">
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="isNameIsEmpty:" destination="Z39-q3-Dg0" eventType="editingChanged" id="xYy-rU-66Y"/>
+                                    <action selector="requiredFieldsAreEmpty:" destination="Z39-q3-Dg0" eventType="editingChanged" id="T9S-WZ-mgx"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название группы" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHU-NQ-vgo">
+                                <rect key="frame" x="16" y="143" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="isDisplayNameIsEmpty:" destination="Z39-q3-Dg0" eventType="editingChanged" id="tKF-Fn-SfT"/>
+                                    <action selector="requiredFieldsAreEmpty:" destination="Z39-q3-Dg0" eventType="editingChanged" id="iKP-LR-aZd"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пермиссии" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rb-pX-FHe">
+                                <rect key="frame" x="16" y="189" width="278" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRC-zy-QZk">
+                                <rect key="frame" x="299" y="189" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.30588235289999999" green="0.69019607839999997" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8xF-x1-9nZ"/>
+                                </constraints>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Iha-w3-9UD" firstAttribute="trailing" secondItem="NRC-zy-QZk" secondAttribute="trailing" constant="16" id="1vx-S8-nGU"/>
+                            <constraint firstItem="kHU-NQ-vgo" firstAttribute="top" secondItem="KfR-Wh-UGU" secondAttribute="bottom" constant="16" id="2DN-pG-l88"/>
+                            <constraint firstItem="9rb-pX-FHe" firstAttribute="leading" secondItem="Iha-w3-9UD" secondAttribute="leading" constant="16" id="4zq-ZM-dkM"/>
+                            <constraint firstItem="kHU-NQ-vgo" firstAttribute="top" secondItem="KfR-Wh-UGU" secondAttribute="bottom" constant="16" id="72D-9J-sep"/>
+                            <constraint firstItem="Iha-w3-9UD" firstAttribute="trailing" secondItem="KfR-Wh-UGU" secondAttribute="trailing" constant="16" id="7Cm-Bx-uL7"/>
+                            <constraint firstItem="0QO-Zn-Fld" firstAttribute="leading" secondItem="8OK-17-89l" secondAttribute="leading" id="8Ng-8k-1f0"/>
+                            <constraint firstItem="9rb-pX-FHe" firstAttribute="top" secondItem="kHU-NQ-vgo" secondAttribute="bottom" constant="16" id="BEl-Wm-Kia"/>
+                            <constraint firstItem="KfR-Wh-UGU" firstAttribute="leading" secondItem="Iha-w3-9UD" secondAttribute="leading" constant="16" id="Brx-b8-u7N"/>
+                            <constraint firstItem="9rb-pX-FHe" firstAttribute="top" secondItem="kHU-NQ-vgo" secondAttribute="bottom" constant="16" id="Q8s-8g-BUs"/>
+                            <constraint firstItem="Iha-w3-9UD" firstAttribute="trailing" secondItem="kHU-NQ-vgo" secondAttribute="trailing" constant="16" id="UHW-Gx-ER4"/>
+                            <constraint firstItem="0QO-Zn-Fld" firstAttribute="top" secondItem="Iha-w3-9UD" secondAttribute="top" id="aXX-fu-zX3"/>
+                            <constraint firstItem="NRC-zy-QZk" firstAttribute="leading" secondItem="9rb-pX-FHe" secondAttribute="trailing" constant="5" id="lwX-ES-PqR"/>
+                            <constraint firstItem="kHU-NQ-vgo" firstAttribute="leading" secondItem="Iha-w3-9UD" secondAttribute="leading" constant="16" id="nIn-b4-j7F"/>
+                            <constraint firstItem="NRC-zy-QZk" firstAttribute="top" secondItem="9rb-pX-FHe" secondAttribute="top" id="nxF-eE-hhS"/>
+                            <constraint firstItem="KfR-Wh-UGU" firstAttribute="top" secondItem="0QO-Zn-Fld" secondAttribute="bottom" constant="33" id="ps4-vo-Ty8"/>
+                            <constraint firstItem="0QO-Zn-Fld" firstAttribute="centerX" secondItem="KfR-Wh-UGU" secondAttribute="centerX" id="uKV-Bq-WSY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Iha-w3-9UD"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="YUr-HL-kIY" id="152-h0-ZDR"/>
+                        <outlet property="customGroupTitle" destination="Y3v-tl-mrX" id="7rD-mc-0kB"/>
+                        <outlet property="displayName" destination="kHU-NQ-vgo" id="RoU-yG-rVq"/>
+                        <outlet property="doneButton" destination="Z2C-u1-DyW" id="pfG-4T-dMm"/>
+                        <outlet property="name" destination="KfR-Wh-UGU" id="1oD-Nx-Dzb"/>
+                        <outlet property="permissions" destination="9rb-pX-FHe" id="HqE-Ts-4GY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiR-OT-xpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zU0-kG-cWf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="2596.5517241379312"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="bkN-Zw-xq7">
             <objects>
@@ -531,6 +632,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqa-Eo-LzA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="772" y="1031"/>
+        </scene>
+        <!--Список атрибутов-->
+        <scene sceneID="MnH-dM-tNY">
+            <objects>
+                <tableViewController id="K2d-3F-IMz" customClass="AttributesTableViewController" customModule="forms" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mft-ex-W87">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="attributeCell" id="uPv-Kn-vyS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uPv-Kn-vyS" id="MUP-iE-HOh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ITN-sh-t8E" kind="presentation" identifier="editAttributeSegue" id="2zX-2Q-TTB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="K2d-3F-IMz" id="ZoX-Lu-QOl"/>
+                            <outlet property="delegate" destination="K2d-3F-IMz" id="x2R-Ex-GyR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Список атрибутов" id="K06-57-BP6">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_menu" id="4iL-fD-HVq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="b2o-fR-2br">
+                            <connections>
+                                <segue destination="ITN-sh-t8E" kind="presentation" identifier="addAttributeSegue" id="CHv-Bo-R91"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuBarButton" destination="4iL-fD-HVq" id="4P2-M8-uqQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Tw-61-7mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="1852"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xJ8-iV-KjY">
+            <objects>
+                <navigationController id="RDN-SM-4Dl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uzx-rd-h4H">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="K2d-3F-IMz" kind="relationship" relationship="rootViewController" id="NiY-Ep-H4F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ftk-he-hLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="1031"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N2p-bK-f4I">
@@ -612,6 +771,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Z39-q3-Dg0" kind="presentation" identifier="editGroupSegue" id="OA4-vQ-nMZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -621,7 +783,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Groups" id="grX-rh-R4g">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icon_menu" id="23g-DL-7OD"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PPr-sP-kjr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PPr-sP-kjr">
+                            <connections>
+                                <segue destination="Z39-q3-Dg0" kind="presentation" identifier="addGroupSegue" id="IQf-8a-289"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarButton" destination="23g-DL-7OD" id="EHY-yM-IhI"/>
@@ -631,13 +797,193 @@
             </objects>
             <point key="canvasLocation" x="772" y="1852"/>
         </scene>
+        <!--Attribute View Controller-->
+        <scene sceneID="cCc-kL-dHa">
+            <objects>
+                <viewController storyboardIdentifier="generalSettings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qbs-IK-lyR" customClass="AttributeViewController" customModule="forms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mjX-rA-PEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4u-uP-PSM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="General Settings" id="B3A-PR-rN1">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="scT-jJ-Mjx">
+                                            <connections>
+                                                <segue destination="dwf-Qu-qle" kind="unwind" unwindAction="cancelAttributeCreationWithSegue:" id="RMO-ga-PKb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="e9u-TD-4Kr">
+                                            <connections>
+                                                <segue destination="dwf-Qu-qle" kind="unwind" unwindAction="doneAttributeCreationWithSegue:" id="F7T-nq-eht"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Код" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-Uk-awP">
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="attributeName" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Наименование типа" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Unx-T3-TMi">
+                                <rect key="frame" x="16" y="143" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="attributeInternalCode" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Базовый тип" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jb6-FN-QXl">
+                                <rect key="frame" x="16" y="189" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-hK-rUp">
+                                <rect key="frame" x="16" y="235" width="343" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="QAN-8T-O0y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A4u-uP-PSM" firstAttribute="top" secondItem="yf6-iL-2Kp" secondAttribute="top" id="96r-fy-heG"/>
+                            <constraint firstItem="mdz-Uk-awP" firstAttribute="top" secondItem="A4u-uP-PSM" secondAttribute="bottom" constant="33" id="LL1-GF-8Tg"/>
+                            <constraint firstItem="yf6-iL-2Kp" firstAttribute="trailing" secondItem="O0C-hK-rUp" secondAttribute="trailing" constant="16" id="Mos-9O-ON5"/>
+                            <constraint firstItem="Jb6-FN-QXl" firstAttribute="leading" secondItem="yf6-iL-2Kp" secondAttribute="leading" constant="16" id="SOf-Pk-LKR"/>
+                            <constraint firstItem="O0C-hK-rUp" firstAttribute="leading" secondItem="yf6-iL-2Kp" secondAttribute="leading" constant="16" id="W2m-ro-hR2"/>
+                            <constraint firstItem="Unx-T3-TMi" firstAttribute="top" secondItem="mdz-Uk-awP" secondAttribute="bottom" constant="16" id="Yt0-d5-fQN"/>
+                            <constraint firstItem="Jb6-FN-QXl" firstAttribute="top" secondItem="Unx-T3-TMi" secondAttribute="bottom" constant="16" id="aWB-nk-38x"/>
+                            <constraint firstItem="A4u-uP-PSM" firstAttribute="leading" secondItem="mjX-rA-PEG" secondAttribute="leading" id="bCy-D2-iDD"/>
+                            <constraint firstItem="yf6-iL-2Kp" firstAttribute="trailing" secondItem="Jb6-FN-QXl" secondAttribute="trailing" constant="16" id="bms-GT-CPS"/>
+                            <constraint firstItem="yf6-iL-2Kp" firstAttribute="trailing" secondItem="Unx-T3-TMi" secondAttribute="trailing" constant="16" id="bxc-pt-6Ha"/>
+                            <constraint firstItem="Unx-T3-TMi" firstAttribute="leading" secondItem="yf6-iL-2Kp" secondAttribute="leading" constant="16" id="dCs-0B-391"/>
+                            <constraint firstItem="A4u-uP-PSM" firstAttribute="centerX" secondItem="mdz-Uk-awP" secondAttribute="centerX" id="h2t-cS-nCC"/>
+                            <constraint firstItem="O0C-hK-rUp" firstAttribute="top" secondItem="Jb6-FN-QXl" secondAttribute="bottom" constant="16" id="kHf-df-mKm"/>
+                            <constraint firstItem="mdz-Uk-awP" firstAttribute="leading" secondItem="yf6-iL-2Kp" secondAttribute="leading" constant="16" id="q6O-7b-1Hl"/>
+                            <constraint firstItem="yf6-iL-2Kp" firstAttribute="trailing" secondItem="mdz-Uk-awP" secondAttribute="trailing" constant="16" id="vB7-Al-6FX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yf6-iL-2Kp"/>
+                    </view>
+                    <connections>
+                        <outlet property="attributeCode" destination="mdz-Uk-awP" id="Lp1-oh-vLU"/>
+                        <outlet property="attributeDescription" destination="O0C-hK-rUp" id="7Yq-3c-uOg"/>
+                        <outlet property="attributeDisplayName" destination="Unx-T3-TMi" id="Uzm-Xc-0Z4"/>
+                        <outlet property="attributeInternalCode" destination="Jb6-FN-QXl" id="zV6-tm-BXl"/>
+                        <outlet property="toolBarLabel" destination="B3A-PR-rN1" id="bqI-hZ-KJD"/>
+                    </connections>
+                </viewController>
+                <exit id="dwf-Qu-qle" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMI-Yz-9TA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1216.8" y="3309.8950524737634"/>
+        </scene>
+        <!--Attribute Page View Controller-->
+        <scene sceneID="MHL-H1-H1u">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ITN-sh-t8E" customClass="attributePageViewController" customModule="forms" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="qbs-IK-lyR" kind="presentation" id="dQz-y8-Sus"/>
+                        <segue destination="lti-gg-jMg" kind="presentation" id="ScV-nU-6Uj"/>
+                        <segue destination="4bf-cE-S2M" kind="presentation" id="8CS-pe-OOQ"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ih-dh-K3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="2597"/>
+        </scene>
+        <!--Attribute View Controller-->
+        <scene sceneID="pzM-cQ-4W0">
+            <objects>
+                <viewController storyboardIdentifier="displayOptions" id="lti-gg-jMg" customClass="AttributeViewController" customModule="forms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03j-tw-t8j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QUy-rV-bhU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Display Options" id="3Lu-Xv-SGH">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DRV-v8-AKA">
+                                            <connections>
+                                                <segue destination="Nwf-sd-dJj" kind="unwind" unwindAction="cancelAttributeCreationWithSegue:" id="KhC-go-xJi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Osv-Oi-9tu">
+                                            <connections>
+                                                <segue destination="Nwf-sd-dJj" kind="unwind" unwindAction="doneAttributeCreationWithSegue:" id="LCL-7A-9VZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="atp-Q0-oNT"/>
+                    </view>
+                    <connections>
+                        <outlet property="toolBarLabel" destination="3Lu-Xv-SGH" id="Ibg-YV-HKa"/>
+                    </connections>
+                </viewController>
+                <exit id="Nwf-sd-dJj" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1wR-hx-wYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908" y="3310"/>
+        </scene>
+        <!--Attribute View Controller-->
+        <scene sceneID="UuW-Yg-bIJ">
+            <objects>
+                <viewController storyboardIdentifier="validationOptions" id="4bf-cE-S2M" customClass="AttributeViewController" customModule="forms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HeM-Er-nQI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moX-OI-Kxa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Validation Options" id="UgR-30-0pb">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CZy-Cw-LFD">
+                                            <connections>
+                                                <segue destination="Fyt-rd-u3X" kind="unwind" unwindAction="cancelAttributeCreationWithSegue:" id="Elx-sC-PeV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="1xK-tb-wtv">
+                                            <connections>
+                                                <segue destination="Fyt-rd-u3X" kind="unwind" unwindAction="doneAttributeCreationWithSegue:" id="4b0-70-nFR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="62o-h8-ZHl"/>
+                    </view>
+                    <connections>
+                        <outlet property="toolBarLabel" destination="UgR-30-0pb" id="Suh-eo-dGj"/>
+                    </connections>
+                </viewController>
+                <exit id="Fyt-rd-u3X" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Evg-Je-sI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2596" y="3310"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="CHv-Bo-R91"/>
         <segue reference="Hy4-Nl-Hv1"/>
         <segue reference="EBm-Pk-hmP"/>
-        <segue reference="ycS-Fd-ruH"/>
+        <segue reference="OA4-vQ-nMZ"/>
+        <segue reference="O49-hP-amI"/>
     </inferredMetricsTieBreakers>
 </document>
