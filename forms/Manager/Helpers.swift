@@ -26,4 +26,5 @@ class Helpers {
     static func hideActivityIndicator(_ activityIndicator: UIActivityIndicatorView) {
         activityIndicator.stopAnimating()
     }
+
 }

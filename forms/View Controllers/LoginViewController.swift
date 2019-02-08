@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusMessage: UILabel!
     let ut = UsersTableViewController()
     let group = DispatchGroup()
+    
     @IBAction func loginButton(_ sender: UIButton) {
         
         APIManager.shared.logIn(login: "superuser", password: "?cHangEthISpAssWorD!") { (error) in //login: loginField.text!, password: passwordField.text!
@@ -36,8 +37,7 @@ class ViewController: UIViewController {
         
         //hiding the navigation button
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton
-        
+        navigationItem.leftBarButtonItem = backButton      
         // Do any additional setup after loading the view, typically from a nib.
         
         //if user is already logged in switching to profile screen

@@ -21,6 +21,7 @@
 		502DB90521F5F47E00B0753E /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB90421F5F47E00B0753E /* Attribute.swift */; };
 		502DB90721F5FD3200B0753E /* AttributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB90621F5FD3200B0753E /* AttributeViewController.swift */; };
 		502DB90921F6428400B0753E /* attributePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DB90821F6428400B0753E /* attributePageViewController.swift */; };
+		5057958F220DA2A200D770EF /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5057958E220DA2A200D770EF /* KeyboardLayoutConstraint.swift */; };
 		507A75F521F0B89E006253E8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A75F421F0B89E006253E8 /* Group.swift */; };
 		5094D8B021B17C64004A7F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8AF21B17C64004A7F80 /* AppDelegate.swift */; };
 		5094D8B221B17C64004A7F80 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094D8B121B17C64004A7F80 /* LoginViewController.swift */; };
@@ -70,6 +71,7 @@
 		502DB90421F5F47E00B0753E /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		502DB90621F5FD3200B0753E /* AttributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeViewController.swift; sourceTree = "<group>"; };
 		502DB90821F6428400B0753E /* attributePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attributePageViewController.swift; sourceTree = "<group>"; };
+		5057958E220DA2A200D770EF /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		507A75F421F0B89E006253E8 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		5094D8AC21B17C64004A7F80 /* forms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = forms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094D8AF21B17C64004A7F80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				5094D8BB21B17C65004A7F80 /* Info.plist */,
 				5003207821B685D400CCD441 /* SWRevealViewController.h */,
 				5003207921B685D400CCD441 /* SWRevealViewController.m */,
+				5057958E220DA2A200D770EF /* KeyboardLayoutConstraint.swift */,
 			);
 			path = forms;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				502DB90921F6428400B0753E /* attributePageViewController.swift in Sources */,
 				5003207F21B6B12400CCD441 /* UserViewController.swift in Sources */,
 				500D4A0D21D7A23F00A82B4F /* ApiManager.swift in Sources */,
+				5057958F220DA2A200D770EF /* KeyboardLayoutConstraint.swift in Sources */,
 				EB28226A21D7EC5500A77859 /* UserViewCell.swift in Sources */,
 				5003208121B6C4C900CCD441 /* CustomSelectorTableViewController.swift in Sources */,
 				502DB90521F5F47E00B0753E /* Attribute.swift in Sources */,
