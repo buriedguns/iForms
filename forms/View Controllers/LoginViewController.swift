@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     let group = DispatchGroup()
     @IBAction func loginButton(_ sender: UIButton) {
         
-        APIManager.shared.logIn(login: "superuser", password: "qwe123456") { (error) in //login: loginField.text!, password: passwordField.text!
+        APIManager.shared.logIn(login: "superuser", password: "?cHangEthISpAssWorD!") { (error) in //login: loginField.text!, password: passwordField.text!
             
             if error != nil {
                 self.statusMessage.isHidden = false
