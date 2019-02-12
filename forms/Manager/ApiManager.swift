@@ -107,4 +107,15 @@ class APIManager {
     let path = "/attribute-types/list"
     requestServer(true, .get, path, params: nil, queryItems: [NSURLQueryItem(name: "offset", value: "0"), NSURLQueryItem(name: "limit", value: "500")],  JSONEncoding.default, completionHandler)
     }
+    
+    func setPassword(_ userName: String,_ params: [String: Any]?, completionHandler: @escaping(JSON) -> Void) {
+        let path = "rest/users/\(userName)/password"
+        requestServer(false, .post, path, params: params, queryItems: nil, JSONEncoding.default, completionHandler)
+    }
+    
+    func editPassword(_ userName: String,_ params: [String: Any]?, completionHandler: @escaping(JSON) -> Void) {
+        let path = "rest/users/\(userName)/password"
+        requestServer(false, .put, path, params: params, queryItems: nil, JSONEncoding.default, completionHandler)
+    }
+    
 }

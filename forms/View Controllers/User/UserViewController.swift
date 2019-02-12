@@ -36,7 +36,13 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         if userName.text!.isEmpty || fullName.text!.isEmpty || eMail.text!.isEmpty{
             self.doneButton.isEnabled = false
         } else {
-            self.doneButton.isEnabled = true
+            if self.localPassword.isHidden == true{
+                self.doneButton.isEnabled = true
+            } else if self.localPassword.isHidden == false && self.localPassword.text?.isEmpty == true {
+                self.doneButton.isEnabled = false
+            } else if self.localPassword.isHidden == false && self.localPassword.text?.isEmpty == false && self.localPassword.text == self.passwordConfirmation.text{
+                self.doneButton.isEnabled = true
+            }
         }
     }
     
@@ -72,6 +78,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     @IBAction func identificatorNotEmpty(_ sender: Any) {
         if self.identificatorAD.text?.isEmpty == true{
             self.localPassword.isHidden = false
@@ -79,6 +86,20 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         } else {
             self.localPassword.isHidden = true
             self.passwordConfirmation.isHidden = true
+        }
+    }
+    
+    
+    @IBAction func isPasswordConfirmed(_ sender: Any) {
+        if self.localPassword.text == self.passwordConfirmation.text {
+            self.localPassword.layer.borderWidth = 0
+            self.passwordConfirmation.layer.borderWidth = 0
+        } else {
+            self.doneButton.isEnabled = false
+            self.localPassword.layer.borderColor = UIColor.red.cgColor
+            self.localPassword.layer.borderWidth = 1.0
+            self.passwordConfirmation.layer.borderColor = UIColor.red.cgColor
+            self.passwordConfirmation.layer.borderWidth = 1.0
         }
     }
     
@@ -94,6 +115,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             self.userName.isEnabled = true
             self.doneButton.isEnabled = false
         }
+        self.identificatorNotEmpty(self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,6 +129,11 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 APIManager.shared.editUser((currentUser?.userName)!, parameters) { JSON in
                 }
             }
+            if self.localPassword.isHidden != true {
+                let parameters = ["password": self.localPassword.text!]
+                APIManager.shared.editPassword((currentUser?.userName)!, parameters) { (JSON) in
+                }
+            }
         } else if segue.identifier == "doneSegue" && currentTitle == "Add User" {
             let parameters: [String : Any] = ["username": self.userName.text!,
                                               "ldapId": self.identificatorAD.text!,
@@ -114,6 +141,11 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                                               "departamentDisplayName": self.department.text!,
                                               "mail": self.eMail.text!]
             APIManager.shared.createUser(parameters) { JSON in
+            }
+            if self.localPassword.isHidden != true {
+                let parameters = ["password": self.localPassword.text!]
+                APIManager.shared.setPassword(self.userName.text!, parameters) { (JSON) in
+                }
             }
         }
         if segue.identifier == "groupSegue"{
