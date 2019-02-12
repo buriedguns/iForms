@@ -28,6 +28,9 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var permissions: [UITextField]!
     @IBOutlet var groups: [UITextField]!
     @IBOutlet weak var department: UITextField!
+    @IBOutlet weak var localPassword: UITextField!
+    @IBOutlet weak var passwordConfirmation: UITextField!
+    
     
     @IBAction func requiredFieldsAreEmpty(_ sender: UITextField) {
         if userName.text!.isEmpty || fullName.text!.isEmpty || eMail.text!.isEmpty{
@@ -69,6 +72,16 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    @IBAction func identificatorNotEmpty(_ sender: Any) {
+        if self.identificatorAD.text?.isEmpty == true{
+            self.localPassword.isHidden = false
+            self.passwordConfirmation.isHidden = false
+        } else {
+            self.localPassword.isHidden = true
+            self.passwordConfirmation.isHidden = true
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
