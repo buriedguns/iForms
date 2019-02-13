@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         
-        APIManager.shared.logIn(login: "superuser", password: "?cHangEthISpAssWorD!") { (error) in //login: loginField.text!, password: passwordField.text!
+        APIManager.shared.logIn(login: loginField.text!, password: passwordField.text!) { (error) in //login: loginField.text!, password: passwordField.text!
             
             if error != nil {
                 self.statusMessage.isHidden = false
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.passwordField.isSecureTextEntry = true
         //hiding the navigation button
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton      

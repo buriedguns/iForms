@@ -292,6 +292,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.13112732769999999" green="0.27293479440000001" blue="0.46838361020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" id="GbM-Ne-nKx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
